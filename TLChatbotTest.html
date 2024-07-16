@@ -1,9 +1,6 @@
 <html>
     <body>
-        <input type="text" id="firstname" />
-        <input type="text" id="lastname" />
-        <input type="text" id="email" />
-        <button onclick="passValues()">Submit</button>
+
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
@@ -17,21 +14,13 @@
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
 
-            var firstname;
-            var lastname;
-            var email;
+            var firstname = "Brandon";
+            var lastname = "Appel";
+            var email = "testing@email.com";
 
-            async function passValues(){
-                return{
-                    firstname: document.getElementById("Brandon").value,
-                    lastname: document.getElementById("lastname").value,
-                    email: document.getElementById("email").value
-                }
-            }
 
             var initESW = async function(gslbBaseURL) {
-                
-                const info = await passValues();
+
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
         
@@ -47,9 +36,9 @@
                     // Returns a valid button ID.
                 //};
                 embedded_svc.settings.prepopulatedPrechatFields = {
-                    FirstName: info.firstname,
-                    LastName: info.lastname,
-                    Email: info.email
+                    FirstName: firstname,
+                    LastName: lastname,
+                    Email: email
                 }; //Sets the auto-population of pre-chat form fields
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
