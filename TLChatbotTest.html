@@ -20,11 +20,11 @@
             var firstname;
             var lastname;
             var email;
-            
+
             function passValue(){
-                const firstname = document.getElementById("firstname").value;
-                const lastname = document.getElementById("lastname").value;
-                const email = document.getElementById("email").value;
+                this.firstname = document.getElementById("firstname").value;
+                this.lastname = document.getElementById("lastname").value;
+                this.email = document.getElementById("email").value;
                 console.log("First name: " + JSON.stringify(firstname) + ' last name: ' + lastname);
             }
 
@@ -45,9 +45,9 @@
                     // Returns a valid button ID.
                 //};
                 embedded_svc.settings.prepopulatedPrechatFields = {
-                    FirstName: firstname,
-                    LastName: lastname,
-                    Email: email
+                    FirstName: this.firstname,
+                    LastName: this.lastname,
+                    Email: this.email
                 }; //Sets the auto-population of pre-chat form fields
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
