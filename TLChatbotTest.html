@@ -23,15 +23,14 @@
 
             async function passValues(){
                 return{
-                    firstname: document.getElementById("firstname").value,
+                    firstname: document.getElementById("Brandon").value,
                     lastname: document.getElementById("lastname").value,
                     email: document.getElementById("email").value
                 }
             }
 
-            var initESW = async function(gslbBaseURL) {
+            var initESW = function(gslbBaseURL) {
                 
-                const info = await passValues();
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
         
@@ -47,9 +46,9 @@
                     // Returns a valid button ID.
                 //};
                 embedded_svc.settings.prepopulatedPrechatFields = {
-                    FirstName: info.firstname,
-                    LastName: info.lastname,
-                    Email: info.email
+                    FirstName: "Brandon",
+                    LastName: "Appel",
+                    Email: "brandon@cloudforia.com"
                 }; //Sets the auto-population of pre-chat form fields
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
