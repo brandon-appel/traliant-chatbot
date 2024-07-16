@@ -1,5 +1,9 @@
 <html>
     <body>
+        <input type="text" id="firstname" />
+        <input type="text" id="lastname" />
+        <input type="text" id="email" />
+        <button onclick="passValue()">Submit</button>
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
@@ -10,10 +14,18 @@
             }
         </style>
         
+        <script>
+            function passValue(){
+                const firstname = document.getElementById("firstname").value;
+                const lastname = document.getElementById("lastname").value;
+                const email = document.getElementById("email").value;
+            }
+        </script>
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
             var initESW = function(gslbBaseURL) {
- 
+                
+                console.log("First name: " + firstname + ' last name: ' + lastname);
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
         
