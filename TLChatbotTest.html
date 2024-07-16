@@ -17,6 +17,7 @@
             var firstname = "Brandon";
             var lastname = "Appel";
             var email = "testing@email.com";
+            var authenticated = true;
 
 
             var initESW = function(gslbBaseURL) {
@@ -43,7 +44,13 @@
                 embedded_svc.settings.extraPrechatFormDetails = [{
                     "label": "First Name",
                     "transcriptFields": ["First_Name__c"]
-                }];
+                },
+                {
+                    "label": "authenticated",
+                    "value": authenticated,
+                    "transcriptFields": ["Authenticated__c"]
+                }
+                ];
                 //Sets the auto-population of pre-chat form fields
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
