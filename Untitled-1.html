@@ -1,0 +1,24 @@
+<html>
+	<body>
+
+		<script type='text/javascript'>
+			function initEmbeddedMessaging() {
+				try {
+					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+					embeddedservice_bootstrap.init(
+						'00DVF000004g8Jp',
+						'Chatbot_Standard',
+						'https://traliant--dev1.sandbox.my.site.com/ESWChatbotStandard1722261213659',
+						{
+							scrt2URL: 'https://traliant--dev1.sandbox.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
+				}
+			};
+		</script>
+		<script type='text/javascript' src='https://traliant--dev1.sandbox.my.site.com/ESWChatbotStandard1722261213659/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	</body>
+</html>
