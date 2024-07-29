@@ -4,7 +4,40 @@
 			function initEmbeddedMessaging() {
 				try {
 					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
+                    var firstname = "Brandon";
+                    var lastname = "Appel";
+                    var email = "brandon@cloudforia.com";
+                    var authenticated = true;
+        
+                        embedded_svc.settings.displayHelpButton = true; //Or false
+                        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+        
+                        embedded_svc.settings.prepopulatedPrechatFields = {
+                            FirstName: firstname,
+                            LastName: lastname,
+                            Email: email
+                        }; 
+                        embedded_svc.settings.extraPrechatFormDetails = [{
+                                "label": "First Name",
+                                "transcriptFields": ["First_Name__c"],
+                                "value": firstname
+                            },
+                            {
+                                "label": "Last Name",
+                                "value": lastname,
+                                "transcriptFields": ["Last_Name__c"]
+                            },
+                            {
+                                "label": "authenticated",
+                                "value": authenticated,
+                                "transcriptFields": ["Authenticated__c"]
+                            },
+                            {
+                                "label": "Email__c",
+                                "value": email, 
+                                "transcriptFields": ["Email__c"]
+                            }
+                        ];
 					embeddedservice_bootstrap.init(
 						'00DVF000004g8Jp',
 						'Chatbot_Standard',
@@ -12,6 +45,7 @@
 						{
 							scrt2URL: 'https://traliant--dev1.sandbox.my.salesforce-scrt.com'
 						}
+                        
 					);
 				} catch (err) {
 					console.error('Error loading Embedded Messaging: ', err);
