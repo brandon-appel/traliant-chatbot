@@ -9,14 +9,6 @@
           var email = "brandon@cloudforia.com";
           var authenticated = true;
 
-          embedded_svc.settings.displayHelpButton = true; //Or false
-          embedded_svc.settings.language = ""; //For example, enter 'en' or 'en-US'
-
-          embedded_svc.settings.prepopulatedPrechatFields = {
-            FirstName: firstname,
-            LastName: lastname,
-            Email: email,
-          };
           embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
             Authenticated__c: authenticated,
           });
