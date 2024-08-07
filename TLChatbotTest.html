@@ -13,13 +13,47 @@
 
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
+            var init1Url;
+            var init2Url;
+            var gslId;
+            var gslName;
+            var deplId;
+            var buttonId;
+            var embeddedUrl;
+            var baseLiveAgentURL;
+            var baseLiveAgentContentURL;
+
+            if(window.location.href.includes('staging.lms') || window.location.href.includes('htmlpreview')){
+                init1Url = 'https://traliant--dev1.sandbox.my.salesforce.com';
+                init2Url = 'https://traliant--dev1.sandbox.my.site.com/';
+                gslId = '00DVF000004g8Jp';
+                gslName = 'Chatbot_Queue';
+                deplId = '572VF000000KTp3';
+                buttonId = '573VF000000Dkkz';
+                embeddedUrl = 'https://traliant--dev1.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js';
+                baseLiveAgentContentURL = 'https://c.la2s-core2.sfdc-lywfpd.salesforceliveagent.com/content';
+                baseLiveAgentURL = 'https://d.la2s-core2.sfdc-lywfpd.salesforceliveagent.com/chat';
+                eswLiveAgentDevName = 'Chatbot_Queue';
+            }
+            else{
+                init1Url = 'https://traliant.my.salesforce.com';
+                init2Url = 'https://traliant.my.site.com/';
+                gslId = '00D36000000HlEo';
+                gslName = 'Chat_Queue';
+                deplId = '572VO0000008401';
+                buttonId = '573VO000000TSyc';
+                embeddedUrl = 'https://traliant.my.salesforce.com/embeddedservice/5.0/esw.min.js';
+                baseLiveAgentContentURL = 'https://c.la1-core2.sfdc-lywfpd.salesforceliveagent.com/content';
+                baseLiveAgentURL = 'https://d.la1-core2.sfdc-lywfpd.salesforceliveagent.com/chat';
+                eswLiveAgentDevName = 'Chat_Queue';
+            }
 
             /*This is where we will want to pass values into the declared variables in order to denote user's authetnication status and known data attributes. Right now these are defaulted for testing.*/
-            var firstname = "Brandon";
-            var lastname = "Appel";
-            var email = "brandon@cloudforia.com";
-            var authenticated = true;
-
+            var firstname = "";
+            var lastname = "";
+            var email = "";
+            var authenticated = false;
+            var source = '';//Learner or admin.
 
             var initESW = function(gslbBaseURL) {
 
@@ -50,6 +84,11 @@
                         "label": "Email__c",
                         "value": email, 
                         "transcriptFields": ["Email__c"]
+                    },
+                    {
+                        "label" :"Source__c",
+                        "value": source,
+                        "transcriptFields": ["Source__c"]
                     }
                 ];
         
