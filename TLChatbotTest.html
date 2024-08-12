@@ -96,17 +96,17 @@
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
                 embedded_svc.init(
-                    'https://traliant--dev1.sandbox.my.salesforce.com',
-                    'https://traliant--dev1.sandbox.my.site.com/',
+                    init1Url,
+                    init2Url,
                     gslbBaseURL,
-                    '00DVF000004g8Jp',
-                    'Chatbot_Queue',
+                    gslId,
+                    gslName,
                     {
-                        baseLiveAgentContentURL: 'https://c.la2s-core2.sfdc-lywfpd.salesforceliveagent.com/content',
-                        deploymentId: '572VF000000KTp3',
-                        buttonId: '573VF000000Dkkz',
-                        baseLiveAgentURL: 'https://d.la2s-core2.sfdc-lywfpd.salesforceliveagent.com/chat',
-                        eswLiveAgentDevName: 'Chatbot_Queue',
+                        baseLiveAgentContentURL: baseLiveAgentContentURL,
+                        deploymentId: deplId,
+                        buttonId: buttonId,
+                        baseLiveAgentURL: baseLiveAgentURL,
+                        eswLiveAgentDevName: eswLiveAgentDevName,
                         isOfflineSupportEnabled: false
                     }
                 );
@@ -114,7 +114,7 @@
         
             if (!window.embedded_svc) {
                 var s = document.createElement('script');
-                s.setAttribute('src', 'https://traliant--dev1.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.setAttribute('src', embeddedUrl);
                 s.onload = function() {
                     initESW(null);
                 };
