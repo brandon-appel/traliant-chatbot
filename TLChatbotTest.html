@@ -38,7 +38,7 @@
             var baseLiveAgentURL;
             var baseLiveAgentContentURL;
 
-            if(window.location.href.includes('staging.lms') || window.location.href.includes('htmlpreview')){
+            /*if(window.location.href.includes('staging.lms') || window.location.href.includes('htmlpreview')){
                 init1Url = 'https://traliant--dev1.sandbox.my.salesforce.com';
                 init2Url = 'https://traliant--dev1.sandbox.my.site.com/';
                 gslId = '00DVF000004g8Jp';
@@ -51,7 +51,7 @@
                 eswLiveAgentDevName = 'Chatbot_Queue';
                 console.log('STAGING | TESTING');
             }
-            else{
+            else{*/
                 init1Url = 'https://traliant.my.salesforce.com';
                 init2Url = 'https://traliant.my.site.com/';
                 gslId = '00D36000000HlEo';
@@ -62,7 +62,7 @@
                 baseLiveAgentContentURL = 'https://c.la1-core2.sfdc-lywfpd.salesforceliveagent.com/content';
                 baseLiveAgentURL = 'https://d.la1-core2.sfdc-lywfpd.salesforceliveagent.com/chat';
                 eswLiveAgentDevName = 'Chat_Queue';
-            }
+            //}
 
             /*This is where we will want to pass values into the declared variables in order to denote user's authetnication status and known data attributes. Right now these are defaulted for testing.*/
             var firstname = "";
